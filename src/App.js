@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {isEmpty, size} from 'lodash';
 import shortid from 'shortid';
-import { getData } from './actions';
+import { getCollection } from './actions';
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const result = await getData();
-      console.log(result);
+      const result = await getCollection("tasks")
+       console.dir(result);
     })()
 
   },[]);
